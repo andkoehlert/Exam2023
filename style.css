@@ -1,0 +1,24 @@
+/*
+Theme Name: Plates
+Text Domain: plates
+Author: Andreas Koehlert
+Description: Exam
+Version: 1.0
+
+*/
+
+
+
+.navbar li a {
+    color: beige;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    color: aliceblue;
+    background-color: aliceblue;
+}
