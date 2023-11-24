@@ -6,19 +6,76 @@ Description: Exam
 Version: 1.0
 
 */
+/* Add these styles to set a fixed height for the navbar and center the logo vertically */
+.navbar {
+}
 
 
 
-.navbar li a {
+.navbar-nav li a {
     color: beige;
-    display: flex;
-    flex-direction: row;
+    display: block;
+    padding: 15px; /* Increase the padding for more space */
 }
 
-.logo{
-    width: 50px;
-    height: 50px;
+.logo {
+    width: 6em;
     margin-right: 10px;
-    color: aliceblue;
-    background-color: aliceblue;
+    position: relative;
+    justify-content: start;
 }
+.food{
+    width: 200px;
+}
+.title-logo {
+    width: 20em;
+    margin-right: 10px;
+    position: relative;
+    justify-content: start;
+}
+
+.test{
+    background-color: rgb(145, 6, 6);
+}
+.navbar-toggler {
+    background-color: aliceblue;
+    color: aliceblue;
+}
+
+.wp-block-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+}
+header, article {
+    z-index: 1; 
+}
+.aboutUS{
+    max-width: 1200px;
+  }
+.intro{
+    height: 100vh;
+    background-color: rgb(17, 16, 16);
+    color: rgb(233, 228, 228);
+  }
+
+
+
+@media (min-width: 768px) {
+    .carousel-multi-item-2 .col-md-3 {
+      float: left;
+      width: 25%;
+      max-width: 100%;
+    }
+
+  }
+  
+  .carousel-multi-item-2 .card img {
+    border-radius: 2px;
+  }
+
+
+ 
+
+  
