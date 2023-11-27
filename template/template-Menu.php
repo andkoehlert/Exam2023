@@ -4,35 +4,69 @@ Template Name: Menu Page
 */
 ?>
 
-<?php get_header(); ?>
-<a class="navbar-brand" href="<?php echo home_url(); ?>">
-                    <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo">
-                </a>
-            <nav class="navbar  navbar-expand-lg navbar-dark position-absolute  ">
-                
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse   " id="navbarNav">
-                    <?php 
-                        wp_nav_menu(
-                            array(
-                                'menu' => 'primary',
-                                'items_wrap' => '<ul id="" class="navbar-nav  d-flex flex-column justify-content-end  ml-auto">%3$s</ul>', // Use ml-auto to align items to the right
-                            )
-                        );
-                    ?>
-                
-            </nav>
-            
-        </header>
-<div class="custom-about-content d-flex justify-content-center">
-    <!-- Your custom content for the About page goes here -->
-    <h1>Menu</h1>
-    <p>This is our menu page content.</p>
+
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <?php wp_head(); ?>
+   <?php wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array('jquery'), null, true); ?>
+</head>
+
+
+<body>
+<div class="custom-about-content justify-content-center menu-box">
+
+
+
+
+   <?php
+   if (function_exists('get_field')) {
+
+
+       $image = get_field('menulogo');
+
+
+       if ($image) {
+           echo '<img class="menu-logo" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+       }
+   }
+   ?>
+       <ul class="list-group">
+       <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'food' ) ) ?>">
+               <li class="menu-item-box m-3 text-center block mx-auto">
+                   Food
+               </li>
+            </a>
+           <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'wine' ) ) ?>">
+               <li class="menu-item-box m-3 text-center block mx-auto">
+                   Wine
+               </li>
+            </a>
+              
+           </a>
+           <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'drinks' ) ) ?>">
+               <li class="menu-item-box m-3 text-center block mx-auto">
+                   Drinks
+               </li>
+            </a>
+            <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'new-year' ) ) ?>">
+               <li class="menu-item-box m-3 text-center block mx-auto">
+                   New Years
+               </li>
+            </a>
+       </ul>
+
+
+ 
+
+
+  
 </div>
+
+
 
 
 <?php get_footer(); ?>

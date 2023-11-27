@@ -7,40 +7,23 @@ Version: 1.0
 
 */
 /* Add these styles to set a fixed height for the navbar and center the logo vertically */
-.navbar {
-}
 
 
 
-.navbar-nav li a {
-    color: beige;
-    display: block;
-    padding: 15px; /* Increase the padding for more space */
-}
 
-.logo {
-    width: 6em;
-    margin-right: 10px;
-    position: relative;
-    justify-content: start;
-}
+
+
+
+
 .food{
     width: 200px;
 }
-.title-logo {
-    width: 20em;
-    margin-right: 10px;
-    position: relative;
-    justify-content: start;
-}
+
 
 .test{
     background-color: rgb(145, 6, 6);
 }
-.navbar-toggler {
-    background-color: aliceblue;
-    color: aliceblue;
-}
+
 
 .wp-block-cover {
     background-size: cover;
@@ -51,15 +34,15 @@ Version: 1.0
 header, article {
     z-index: 1; 
 }
-.aboutUS{
-    max-width: 1200px;
-  }
+
 .intro{
     height: 100vh;
     background-color: rgb(17, 16, 16);
     color: rgb(233, 228, 228);
   }
-
+  .frontpage_place_title{
+    font-size: small;
+    }
 
 
 @media (min-width: 768px) {
@@ -69,6 +52,7 @@ header, article {
       max-width: 100%;
     }
 
+   
   }
   
   .carousel-multi-item-2 .card img {
@@ -77,5 +61,225 @@ header, article {
 
 
  
+
+
+
+  /* BARTEKS CSS MENU and FOOTER*/
+.menu-box {
+  background-color: #FFFDEE;
+}
+
+
+.menu-logo {
+ height: auto;
+ width: 50%;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 40px;
+}
+.menu-item-box {
+  list-style: none;
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #E9484E;
+  font-size: 30px;
+}
+@media screen and (max-width:1000px) {
+  .menu-item-box {
+      width: 150px;
+      border: 1px solid #E9484E;
+      font-size: 20px;
+      padding: 7px;
+  }
+}
+@media screen and (max-width:600px) {
+  .menu-item-box {
+      width: 100px;
+      border: 1px solid #E9484E;
+      font-size: 16px;
+      padding: 5px;
+  }
+}
+  .menu-item-box:hover {
+      background-color: #E9484E;
+  }
+  .menu-link {
+      text-decoration: none;
+      color: #000;
+      width: 200px;
+  }
+  .menu-link:hover {
+      color: #000;
+      text-decoration: none;
+  }
+  footer {
+  background-color: #FFFDEE;
+  }
+.reservation {
+  color: #E9484E;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 3px solid #E9484E;
+}
+.footer-title {
+  color: #E9484E;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.info-box{
+  width: 200px;
+  height: auto;
+}
+.footer-text {
+  font-size: 14px;
+}
+
+
+@media screen and (max-width:1000px) {
+  .reservation {
+      font-size: 18px;
+      border-bottom: 2px solid #E9484E;
+    }
+    .footer-title {
+      color: #E9484E;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  .info-box{
+      width: 180px;
+      height: auto;
+  }
+  .footer-text {
+      font-size: 12px;
+  }
+}
+@media screen and (max-width:600px) {
+  .reservation {
+      font-size: 15px;
+      border-bottom: 2px solid #E9484E;
+    }
+    .footer-title {
+      color: #E9484E;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  .info-box{
+      width: 150px;
+      height: auto;
+  }
+  .footer-text {
+      font-size: 11px;
+  }
+}
+
+
+
+
+/*BARTEK MENU DRINKS (REUSABLE CLASSES FOR THE TOP OF ALL MENU PAGES */
+.page-title {
+  border-bottom: 2px solid #E9484E;
+  width: 60%;
+  margin-left: 20px;
+  color: #E9484E;
+  font-weight: 600;
+  font-size: 30px;
+}
+.language {
+  margin-left: auto;
+  margin-right: 20px;
+  color: #E9484E;
+  font-size: 20px;
+}
+.page-description {
+  width: 300px;
+  text-align: center;
+  color: #707070;
+}
+.underline {
+  width: 60%;
+  border-bottom: 2px solid #E9484E;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.drink-description {
+  width: 300px;
+  text-align: center;
+  font-size: 13px;
+  color: #707070;
+}
+.menu-list {
+  list-style: none;
+  padding: 0px;
+  font-size: 13px;
+  color: #707070;
+}
+.menu-category {
+  color: #E9484E;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+@media screen and (max-width:1000px) {
+  .page-title {
+      width: 65%;
+      margin-left: 15px;
+      font-size: 30px;
+  }
+  .language {
+      margin-left: auto;
+      margin-right: 15px;
+      color: #E9484E;
+      font-size: 18px;
+  }
+  .page-description {
+     font-size: 15px;
+     width: 280px;
+  }
+  .underline {
+      width: 65%;
+      margin-right: 15px;
+  }
+  .drink-description {
+      width: 300px;
+      text-align: center;
+      font-size: 13px;
+      color: #707070;
+  }
+}
+
+
+@media screen and (max-width:600px) {
+  .page-title {
+      width: 65%;
+      margin-left: 10px;
+      font-size: 25px;
+  }
+  .language {
+      margin-left: auto;
+      margin-right: 10px;
+      color: #E9484E;
+      font-size: 15px;
+  }
+  .page-description {
+     font-size: 13px;
+     width: 200px;
+  }
+  .underline {
+      width: 65%;
+      margin-right: 10px;
+  }
+  .drink-description {
+      width: 250px;
+      text-align: center;
+      font-size: 11px;
+      color: #707070;
+  }
+}
 
   

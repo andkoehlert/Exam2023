@@ -47,15 +47,4 @@ function register_styles_and_scripts() {
 add_action('wp_enqueue_scripts', 'register_styles_and_scripts');
 
 
-/* function add_custom_scripts() {
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('day-night-script', get_template_directory_uri() . '/js/day-night-script.js', array('jquery'), '1.0', true);
 
-    // Pass data to script
-    wp_localize_script('day-night-script', 'day_night_params', array(
-        'day_image' => get_template_directory_uri() . '/assets/images/day.jpg',
-        'night_image' => get_template_directory_uri() . '/assets/images/night.jpg',
-    ));
-}
-
-add_action('wp_enqueue_scripts', 'add_custom_scripts'); */
