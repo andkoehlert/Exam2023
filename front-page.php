@@ -54,23 +54,25 @@ $image2 = get_field("backgroundMobile");
 
 
 
-<div class="centered-content d-flex text-light " style="background-color: rgba(233, 72, 78, 0.3);">
-<a class="" href="<?php echo home_url(); ?>">
-                    <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo"
+<div class="centered-content justify-content-center flex-column d-flex  text-light " >
+<a class="d-flex justify-content-center pb-2" href="<?php echo home_url(); ?>">
+                    <img class="logo " src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo"
                     
                     
                     >
-                </a></div>
-        
-
-
-
-
-
-       
+                </a>
+<div style="background-color: rgba(233, 72, 78, 0.3);">
+    <p class="d-flex justify-content-center pt-2">Restaurant & Cocktailbar</p
+    
+>
+<h1 class="d-flex justify-content-center ">ESBJERG</h1>
+</div>
+>
+</div> 
 
 
     </div>
+    
 </div>
 <section class="Manifest " 
 
@@ -99,7 +101,6 @@ $image2 = get_field("backgroundMobile");
             </div>
         </header>
     </section>
-       <hr class="">
         <section class="aboutUS d-flex justify-content-center mx-auto ">
         <div class="p-2  ">
         <h1 class="frontpage_place_title d-flex justify-content-center pb-4 text-danger">Plates Esbjerg</h1>
@@ -167,6 +168,37 @@ $image2 = get_field("backgroundMobile");
   
 }
 
+.aboutUS{
+    background-color: #FFFDEE;
+}
+
+ul.languages {
+  list-style: none;
+  
+  display: flex;
+}
+
+ul.languages li {
+  margin-right: 10px;
+  margin-top: 10px;
+
+}
+
+ul.languages a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+
+ul.languages .current-lang a {
+  font-weight: bold;
+  color: #fff;
+  background-color: #0073e6; 
+}
+
+
   @keyframes moveInFromLeftAnimation {
     to {
       left: 0;
@@ -189,7 +221,29 @@ color: rgba(233, 72, 78, 1);;
       font-size: small;
       }
 }
-
+footer {
+  background-color: #FFFDEE;
+  }
+.reservation {
+  color: #E9484E;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 3px solid #E9484E;
+}
+.footer-title {
+  color: #E9484E;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.info-box{
+  width: 200px;
+  height: auto;
+}
+.footer-text {
+  font-size: 14px;
+}
 
     </style>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

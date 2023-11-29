@@ -96,7 +96,7 @@ Template Name: Drinks Page
            </h3>
            <?php
                $plates_query = new WP_Query(array(
-                   'post_type' => 'plates-originals',
+                   'post_type' => 'plates-classics',
                    'posts_per_page' => -1,
                ));
 
@@ -107,8 +107,8 @@ Template Name: Drinks Page
                        $plates_query->the_post();
 
 
-                       $field_1 = get_post_meta(get_the_ID(), 'drink-name', true);
-                       $field_2 = get_post_meta(get_the_ID(), 'ingridients', true);
+                       $field_1 = get_post_meta(get_the_ID(), 'drinkname', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'ingredients', true);
                        $field_3 = get_post_meta(get_the_ID(), 'price', true);
 
 
@@ -129,12 +129,12 @@ Template Name: Drinks Page
    <div class="d-block d-md-flex mt-5">
        <div class="col text-center">
            <h3 class="menu-category">
-               Plates Originals
+               Plates Mocktails (No alcohol)
            </h3>
           
            <?php
                $plates_query = new WP_Query(array(
-                   'post_type' => 'plates-originals',
+                   'post_type' => 'mocktails',
                    'posts_per_page' => -1,
                ));
 
@@ -145,8 +145,8 @@ Template Name: Drinks Page
                        $plates_query->the_post();
 
 
-                       $field_1 = get_post_meta(get_the_ID(), 'drink-name', true);
-                       $field_2 = get_post_meta(get_the_ID(), 'ingridients', true);
+                       $field_1 = get_post_meta(get_the_ID(), 'drinkname', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'ingredients', true);
                        $field_3 = get_post_meta(get_the_ID(), 'price', true);
 
 
@@ -170,7 +170,7 @@ Template Name: Drinks Page
            </h3>
            <?php
                $plates_query = new WP_Query(array(
-                   'post_type' => 'plates-originals',
+                   'post_type' => 'barsnacks',
                    'posts_per_page' => -1,
                ));
 
@@ -181,8 +181,8 @@ Template Name: Drinks Page
                        $plates_query->the_post();
 
 
-                       $field_1 = get_post_meta(get_the_ID(), 'drink-name', true);
-                       $field_2 = get_post_meta(get_the_ID(), 'ingridients', true);
+                       $field_1 = get_post_meta(get_the_ID(), 'drinkname', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'ingredients', true);
                        $field_3 = get_post_meta(get_the_ID(), 'price', true);
 
 

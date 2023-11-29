@@ -20,26 +20,15 @@ Version: 1.0
 }
 
 
-.test{
-    background-color: rgb(145, 6, 6);
-}
 
 
-.wp-block-cover {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; /* Set the height to 100% of the viewport height */
-}
+
+
 header, article {
     z-index: 1; 
 }
 
-.intro{
-    height: 100vh;
-    background-color: rgb(17, 16, 16);
-    color: rgb(233, 228, 228);
-  }
+
   .frontpage_place_title{
     font-size: small;
     }
@@ -62,6 +51,32 @@ header, article {
 
  
 
+  ul.languages {
+    list-style: none;
+    
+    display: flex;
+  }
+  
+  ul.languages li {
+    margin-right: 10px;
+    margin-top: 10px;
+  
+  }
+  
+  ul.languages a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  ul.languages .current-lang a {
+    font-weight: bold;
+    color: #fff;
+    background-color: #0073e6; 
+  }
+  
 
 
   /* BARTEKS CSS MENU and FOOTER*/
@@ -281,5 +296,3 @@ header, article {
       color: #707070;
   }
 }
-
-  

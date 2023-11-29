@@ -46,7 +46,7 @@ $video = get_field("background_video");
 
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light h4" href="<?php echo get_permalink(get_page_by_path('home-esbjerg')) ?>">Eng/dk</a>
+            <ul class="languages"><?php pll_the_languages() ?></ul>
             </li>
         </ul>
     </div>
@@ -56,24 +56,27 @@ $video = get_field("background_video");
     
 
 
-<div class="centered-content d-flex text-light " style="background-color: rgba(233, 72, 78, 0.3);">
-<a class="" href="<?php echo home_url(); ?>">
-                    <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo"
+<div class="centered-content justify-content-center flex-column d-flex  text-light " >
+<a class="d-flex justify-content-center pb-2" href="<?php echo home_url(); ?>">
+                    <img class="logo " src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo"
                     
                     
                     >
-                </a></div>
-        
-
-
-
-
-
-       
+                </a>
+<div style="background-color: rgba(233, 72, 78, 0.3);">
+    <p class="d-flex justify-content-center pt-2">Restaurant & Cocktailbar</p
+    
+>
+<h1 class="d-flex justify-content-center ">ESBJERG</h1>
+</div>
+>
+</div> 
 
 
     </div>
+    
 </div>
+
 <section class="Manifest " 
 
 >
@@ -116,8 +119,8 @@ style="max-width: 1000px;"
         <section class=" aboutUS d-flex justify-content-between align-items-center mx-auto "
         >
   <div  class="p-2 text-left col-xs-12 col-md-4 pb-5" >
-    <h1 class="test">
-        About us
+  <h1 class="text-danger">
+    <?php the_field("aboutheading")?>
     </h1>
     <hr class="bg-danger">
     <p class="text-left">
@@ -142,7 +145,7 @@ style="max-width: 1000px;"
 </div>
 <div class="p-2 text-right col-xs-12 col-md-4 pb-5">
     <h1 class="text-danger">
-        About us
+    <?php the_field("aboutheading")?>
     </h1>
     <hr class="bg-danger">
     <p class="text-right">
@@ -220,7 +223,7 @@ style="max-width: 1000px;"
     width: 20em;
     margin-right: 10px;
     position: relative;
-    justify-content: start;
+    justify-content: center;
 }
         .centered-content {
     position: absolute;
@@ -254,6 +257,7 @@ color: rgba(233, 72, 78, 1);;
     background-color: #FFFDEE;
  
 }
+
 
     </style>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
