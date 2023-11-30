@@ -35,7 +35,7 @@ add_action('init', 'menus');
 function register_styles_and_scripts() {
     // Enqueue your theme's style.css
     wp_enqueue_style('style', get_template_directory_uri() . "/style.css", array(), '1.0', 'all');
-
+    wp_enqueue_style( 'menu-style', get_template_directory_uri( ) . "/menu-style.css", array(), '1.0', 'all' );
     // Enqueue Bootstrap stylesheet
     wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', array(), '4.0.0', 'all');
 
