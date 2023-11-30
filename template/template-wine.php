@@ -4,115 +4,255 @@ Template Name: Wine page
 */
 ?>
 
-<?php get_header(); ?>
 
-<div class="frontpage-container">
-    <header>
-        <nav class="navbar  navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
-                <?php 
-                    wp_nav_menu(
-                        array(
-                            'menu' => 'primary',
-                            'items_wrap' => '<ul id="" class="navbar-nav  justify-content-end  ml-auto">%3$s</ul>', // Use ml-auto to align items to the right
-                        )
-                    );
-                ?>
-            </div>
-        </nav>
-    </header>
-
-    <div class="video-container">
-        <video
-            id="background-container"
-            md:autoplay  
-            autoplay
-            loop
-            muted
-            class="video"
-            style="object-fit: cover;" 
-        > 
-            <source src="<?php echo get_template_directory_uri() . '/assets/videos/timelaps.mp4'; ?>" type="video/mp4">
-        </video>
-
-        <div class="content">
-            
-            <div class="">
-                <header class="page-title text-center gradient text-light pt-5 ">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div>
-                            <img class="title-logo" src="<?php the_field("plates") ?>" alt="">
-                        </div> 
-                        <div>
-                            <h3><?php the_field("homeTitle")?></h3>
-                            <p><?php the_field("subtext")?></p>
-                        </div>
-                    </div>
-                </header>
-            </div>
-
-            <?php if (is_front_page()) : ?>
-                <style>
-                    .video-container {
-                        position: relative;
-                        height: 100vh;  
-                        overflow: hidden;
-                    }
-
-                    .content {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        z-index: 2;
-                    }
-
-                    .frontpage-container {
-                        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/Pview.jpg'; ?>');
-                        background-size: cover;
-                        height: 100vh;
-                        display: flex;
-                        flex-direction: column;
-                        position: relative; /* Add this for proper z-index stacking */
-                    }
-
-                    header, article {
-                        z-index: 1; 
-                    }
-                </style>
-            <?php endif; ?>
-
-            <article>
-                <?php 
-                if (have_posts()) {
-                    while (have_posts()) {
-                        the_post();
-                        the_content();
-                    }
-                }
-                ?>
-            </article>
-
-            <div class="d-flex justify-content-center text-light">
-                <p><?php the_field("homeTitle") ?></p> 
-            </div>
-
-            <!-- New Section -->
-            <div class="row m-4">
-                <!-- Your gallery images here -->
-            </div>
-            <!-- Gallery -->
-        </div>
-    </div>
-</div>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <?php wp_head(); ?>
+   <?php wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array('jquery'), null, true); ?>
+</head>
 
 
-<?php get_footer(); ?>
+<body class="menu-box">
+<main id="wine"> 
+<section>
+
+
+   <div class="d-flex">
+   <h2 class="page-title d-flex">
+               Wine
+
+
+            <ul class="menu-navigation d-flex justify-content-center">
+                   <a  class="navigation-link" href="<?php echo get_permalink( get_page_by_path( 'home-esbjerg' ) ) ?>">
+                       <li>
+                       <img class="nav-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/home1.png" alt="Wine">
+                       </li>
+                   </a>
+                   <a class="navigation-link" href="<?php echo get_permalink( get_page_by_path( 'menu' ) ) ?>">
+                       <li>
+                           <img class="nav-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/menu1.png" alt="Example Image">
+                       </li>
+                   </a>
+           </ul>
+       </h2>
+            <ul class="languages ml-auto"><?php pll_the_languages() ?></ul>
+   </div>
+  
+   <div class="page-description block mx-auto">
+       <p>
+       <?php the_field("wineintro")?>
+       </p>
+   </div>
+
+
+   <div class="underline"></div>
+  
+   <div class="d-block d-md-flex mt-5">
+       <div class="col text-center">
+           <h3 class="menu-category">
+               White
+           </h3>
+           <?php
+               $plates_query = new WP_Query(array(
+                'post_type' => 'white-wine',
+                'posts_per_page' => -1,
+                'orderby' => 'meta_value_num', // Use 'meta_value_num' for numeric fields
+                'meta_key' => 'price_wine',   // Specify the custom field to use for ordering
+                'order' => 'ASC', 
+               ));
+
+
+               if ($plates_query->have_posts()) {
+                   echo '<ul class="menu-list">';
+                   while ($plates_query->have_posts()) {
+                       $plates_query->the_post();
+
+
+                       $field_1 = get_post_meta(get_the_ID(), 'Type', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'price_wine', true);
+
+
+                       echo '<li>' . $field_1 . '</li>';
+                       echo '<li>' . $field_2 . '</li>';
+                   }
+
+
+                   echo '</ul>';
+                   wp_reset_postdata();
+               } else {
+                   echo 'No items to display';
+               }
+               ?>
+       </div>
+       <div class="col text-center">
+           <h3 class="menu-category">
+               Red
+           </h3>
+           <?php
+$plates_query = new WP_Query(array(
+    'post_type' => 'red-wine',
+    'posts_per_page' => -1,
+    'orderby' => 'meta_value_num', // Use 'meta_value_num' for numeric fields
+    'meta_key' => 'price_wine',   // Specify the custom field to use for ordering
+    'order' => 'ASC',              // Order in ascending order, use 'DESC' for descending
+));
+
+if ($plates_query->have_posts()) {
+    echo '<ul class="menu-list">';
+    while ($plates_query->have_posts()) {
+        $plates_query->the_post();
+
+        $field_1 = get_post_meta(get_the_ID(), 'Type', true);
+        $field_2 = get_post_meta(get_the_ID(), 'price_wine', true);
+
+        echo '<li>' . $field_1 . '</li>';
+        echo '<li>' . $field_2 . '</li>';
+    }
+
+    echo '</ul>';
+    wp_reset_postdata();
+} else {
+    echo 'No items to display';
+}
+?>
+
+       </div>
+   </div>
+   <div class="d-block d-md-flex mt-5">
+       <div class="col text-center">
+           <h3 class="menu-category">
+               Rosé
+           </h3>
+          
+           <?php
+               $plates_query = new WP_Query(array(
+                   'post_type' => 'rose-wine',
+                   'posts_per_page' => -1,
+               ));
+
+
+               if ($plates_query->have_posts()) {
+                   echo '<ul class="menu-list">';
+                   while ($plates_query->have_posts()) {
+                       $plates_query->the_post();
+
+
+                       $field_1 = get_post_meta(get_the_ID(), 'Type', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'price_wine', true);
+
+
+                       echo '<li>' . $field_1 . '</li>';
+                       echo '<li>' . $field_2 . '</li>';
+                   }
+
+
+                   echo '</ul>';
+                   wp_reset_postdata();
+               } else {
+                   echo 'No items to display';
+               }
+               ?>
+          
+       </div>
+       <div class="col text-center">
+           <h3 class="menu-category">
+              Bobler
+           </h3>
+           <?php
+               $plates_query = new WP_Query(array(
+                'post_type' => 'bubbles',
+                'posts_per_page' => -1,
+                'orderby' => 'meta_value_num', // Use 'meta_value_num' for numeric fields
+                'meta_key' => 'price_wine',   // Specify the custom field to use for ordering
+                'order' => 'ASC',              // Order in ascending order, use 'DESC' for descending
+               ));
+
+
+               if ($plates_query->have_posts()) {
+                   echo '<ul class="menu-list">';
+                   while ($plates_query->have_posts()) {
+                       $plates_query->the_post();
+
+
+                       $field_1 = get_post_meta(get_the_ID(), 'Type', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'price_wine', true);
+
+
+                       echo '<li>' . $field_1 . '</li>';
+                       echo '<li>' . $field_2 . '</li>';
+                   }
+
+
+                   echo '</ul>';
+                   wp_reset_postdata();
+               } else {
+                   echo 'No items to display';
+               }
+               ?>
+       </div>
+   </div>
+   <div class="d-block d-md-flex mt-5">
+       <div class="col text-center">
+           <h3 class="menu-category">
+               Desert
+           </h3>
+          
+           <?php
+               $plates_query = new WP_Query(array(
+                'post_type' => 'dessert-wine',
+                'posts_per_page' => -1,
+                'orderby' => 'meta_value_num', // Use 'meta_value_num' for numeric fields
+                'meta_key' => 'price_wine',   // Specify the custom field to use for ordering
+                'order' => 'ASC',              // Order in ascending order, use 'DESC' for descending
+               ));
+
+
+               if ($plates_query->have_posts()) {
+                   echo '<ul class="menu-list">';
+                   while ($plates_query->have_posts()) {
+                       $plates_query->the_post();
+
+
+                       $field_1 = get_post_meta(get_the_ID(), 'Type', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'price_wine', true);
+
+
+                       echo '<li>' . $field_1 . '</li>';
+                       echo '<li>' . $field_2 . '</li>';
+                   }
+
+
+                   echo '</ul>';
+                   wp_reset_postdata();
+               } else {
+                   echo 'No items to display';
+               }
+               ?>
+          
+       </div>
+   </div>
+
+
+
+
+
+   <?php get_footer(); ?>
+    </section>
+
+   </main>
+</body>
+
+
+
+
+ 
+
+
+  
+
+
+
+
+

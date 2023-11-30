@@ -19,19 +19,35 @@ Template Name: Drinks Page
 
 
 <body class="menu-box">
+<main id="Drinks"> 
+<section>
 
 
-   <div class="d-flex">
-       <h1 class="page-title">Drinks</h1>
-       <div class="language">DK/EN</div>
+ 
+<div class="d-flex">
+   <h1 class="page-title d-flex">
+               Drinks
+
+
+            <ul class="menu-navigation d-flex justify-content-center">
+                   <a  class="navigation-link" href="<?php echo get_permalink( get_page_by_path( 'home-esbjerg' ) ) ?>">
+                       <li>
+                       <img class="nav-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/home1.png" alt="Example Image">
+                       </li>
+                   </a>
+                   <a class="navigation-link" href="<?php echo get_permalink( get_page_by_path( 'menu' ) ) ?>">
+                       <li>
+                           <img class="nav-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/menu1.png" alt="Example Image">
+                       </li>
+                   </a>
+           </ul>
+       </h1>
+            <ul class="languages ml-auto"><?php pll_the_languages() ?></ul>
    </div>
   
    <div class="page-description block mx-auto">
        <p>
-           We make lovely comfort food that is easy to share,
-           using the seasonal products.
-           Whoever shares, gets more!
-           This is the logic behind our kitchen door.
+          <?php the_field("drinksintro")?>
        </p>
    </div>
 
@@ -39,20 +55,7 @@ Template Name: Drinks Page
    <div class="underline"></div>
 
 
-   <div class="block mx-auto mt-4 drink-description">
-           <p>
-               The Ambassador cocktail for November
-               Blue & Breezy
-               Sevablødda, dark rum, ginger beer & pumpkin spice
-               125
-               Designed in cooperation with BlueByte. For every sold
-               ambassador cocktail in November, Restaurant Plates
-               donates 10 kr. towards Recorvery Bulls.
-               An association helping people through tough times,
-               through their active & drug free community.
-               This drink is also available as a mocktail.
-           </p>
-   </div>  
+ 
   
    <div class="d-block d-md-flex mt-5">
        <div class="col text-center">
@@ -96,7 +99,7 @@ Template Name: Drinks Page
            </h3>
            <?php
                $plates_query = new WP_Query(array(
-                   'post_type' => 'plates-originals',
+                   'post_type' => 'plates-classics',
                    'posts_per_page' => -1,
                ));
 
@@ -107,8 +110,8 @@ Template Name: Drinks Page
                        $plates_query->the_post();
 
 
-                       $field_1 = get_post_meta(get_the_ID(), 'drink-name', true);
-                       $field_2 = get_post_meta(get_the_ID(), 'ingridients', true);
+                       $field_1 = get_post_meta(get_the_ID(), 'drinkname', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'ingredients', true);
                        $field_3 = get_post_meta(get_the_ID(), 'price', true);
 
 
@@ -129,12 +132,12 @@ Template Name: Drinks Page
    <div class="d-block d-md-flex mt-5">
        <div class="col text-center">
            <h3 class="menu-category">
-               Plates Originals
+               Plates Mocktails (No alcohol)
            </h3>
           
            <?php
                $plates_query = new WP_Query(array(
-                   'post_type' => 'plates-originals',
+                   'post_type' => 'mocktails',
                    'posts_per_page' => -1,
                ));
 
@@ -145,8 +148,8 @@ Template Name: Drinks Page
                        $plates_query->the_post();
 
 
-                       $field_1 = get_post_meta(get_the_ID(), 'drink-name', true);
-                       $field_2 = get_post_meta(get_the_ID(), 'ingridients', true);
+                       $field_1 = get_post_meta(get_the_ID(), 'drinkname', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'ingredients', true);
                        $field_3 = get_post_meta(get_the_ID(), 'price', true);
 
 
@@ -170,7 +173,7 @@ Template Name: Drinks Page
            </h3>
            <?php
                $plates_query = new WP_Query(array(
-                   'post_type' => 'plates-originals',
+                   'post_type' => 'barsnacks',
                    'posts_per_page' => -1,
                ));
 
@@ -181,8 +184,8 @@ Template Name: Drinks Page
                        $plates_query->the_post();
 
 
-                       $field_1 = get_post_meta(get_the_ID(), 'drink-name', true);
-                       $field_2 = get_post_meta(get_the_ID(), 'ingridients', true);
+                       $field_1 = get_post_meta(get_the_ID(), 'drinkname', true);
+                       $field_2 = get_post_meta(get_the_ID(), 'ingredients', true);
                        $field_3 = get_post_meta(get_the_ID(), 'price', true);
 
 
@@ -204,12 +207,13 @@ Template Name: Drinks Page
 
 
 
+   <?php get_footer(); ?>
+   </section>
 
-
+</main>
 </body>
   
 
 
 
 
-<?php get_footer(); ?>

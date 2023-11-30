@@ -25,7 +25,7 @@
                         wp_nav_menu(
                             array(
                                 'menu' => 'primary',
-                                'items_wrap' => '<ul id="" class="navbar-nav text-danger d-flex flex-column justify-content-end  ml-auto">%3$s</ul>', // Use ml-auto to align items to the right
+                                'items_wrap' => '<ul id="" class="navbar-nav text-danger d-flex flex-column justify-content-end   ml-auto">%3$s</ul>', // Use ml-auto to align items to the right
                             )
                         );
                     ?>

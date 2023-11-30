@@ -17,8 +17,21 @@ Template Name: Menu Page
 
 
 <body>
-<div class="custom-about-content justify-content-center menu-box">
+<main id="Menu"> 
 
+<div class="custom-about-content justify-content-center menu-box">
+<nav class="navbar  navbar-expand-lg" >
+    <div class="container-fluid">
+        <ul class="navbar-nav d-flex flex-row w-100 ">
+          
+        <li class="nav-item ml-auto">
+            <ul class="languages"><?php pll_the_languages() ?></ul>
+            </li>
+           
+            
+        </ul>
+    </div>
+</nav>
 
 
 
@@ -37,24 +50,32 @@ Template Name: Menu Page
        <ul class="list-group">
        <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'food' ) ) ?>">
                <li class="menu-item-box m-3 text-center block mx-auto">
-                   Food
+               <?php the_field("food")?>
                </li>
             </a>
-           <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'wine' ) ) ?>">
+           <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'plates-wine' ) ) ?>">
                <li class="menu-item-box m-3 text-center block mx-auto">
-                   Wine
+               <?php the_field("wine")?>
+
                </li>
             </a>
               
            </a>
            <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'drinks' ) ) ?>">
                <li class="menu-item-box m-3 text-center block mx-auto">
-                   Drinks
+               <?php the_field("drinks")?>
+
                </li>
             </a>
-            <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'new-year' ) ) ?>">
+            <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'new years' ) ) ?>">
                <li class="menu-item-box m-3 text-center block mx-auto">
-                   New Years
+               <?php the_field("new_years")?>
+               </li>
+            </a>
+            <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'home-esbjerg' ) ) ?>">
+               <li class="menu-item-box m-3 text-center block mx-auto">
+               <?php the_field("home")?>
+
                </li>
             </a>
        </ul>
@@ -70,3 +91,5 @@ Template Name: Menu Page
 
 
 <?php get_footer(); ?>
+</main>
+</body>

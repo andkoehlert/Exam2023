@@ -1,11 +1,12 @@
 <footer class="pb-4">
    <div class="col-6 justify-center text-center block mx-auto pt-5 reservation">
-    MAKE A RESERVATION
-   </div>
+<h2><?php the_field("reservation")?></h2>   
+</div>
    <div class="d-block d-md-flex mt-4">
      <div class="col text-center">
        <span class="footer-title">
-         ADRESS
+       <h3><?php the_field("address")?></h3>   
+
        </span>
        <p class="mt-2 footer-text">
        Grådybet 73A, <br>
@@ -15,7 +16,7 @@
      </div>
      <div class="col text-center">
        <span class="footer-title">
-         OPENING HOURS
+       <h3><?php the_field("opening_hours")?></h3>   
        </span>
        <p class="mt-2 footer-text">
          Mon-Sat from 5:30 p.m <br>
@@ -25,7 +26,8 @@
      </div>
      <div class="col text-center">
        <span class="footer-title">
-         CONTACT
+              <h3><?php the_field("contact")?></h3>   
+
        </span>
        <p class="mt-2 footer-text">
         +45 53697050 <br>
