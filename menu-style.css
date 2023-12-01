@@ -14,6 +14,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.red-text {
+  color: #e9484e;
+}
+
 .language {
   display: flex;
   justify-content: flex-end;
@@ -40,8 +44,8 @@ body::-webkit-scrollbar {
       transparent 0%,
       /* Start with transparent and immediately switch to color at 20% */
         #e9484e 0%,
-      /* Start color at 20% */ #e9484e 75%,
-      /* End color at 80% */ transparent 75%
+      /* Start color at 20% */ #e9484e 70%,
+      /* End color at 80% */ transparent 70%
     )
     1 stretch;
 }
@@ -55,9 +59,9 @@ body::-webkit-scrollbar {
   border-bottom: 3px solid #e9484e;
   border-image: linear-gradient(
       to right,
-      transparent 25%,
+      transparent 32%,
       /* Start with transparent and immediately switch to color at 20% */
-        #e9484e 25%,
+        #e9484e 32%,
       /* Start color at 20% */ #e9484e 95%,
       /* End color at 80% */ transparent 95%
     )
@@ -65,7 +69,7 @@ body::-webkit-scrollbar {
 }
 
 .food-moto p {
-  width: 50%;
+  width: 35%;
   text-align: center;
   color: #000000;
   position: relative;
@@ -77,7 +81,6 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 50px 0;
 }
 
 .christmas-menu-price {
@@ -85,36 +88,63 @@ body::-webkit-scrollbar {
 }
 
 .christmas-menu {
+  height: 1050px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.christmas-menu-wrapper {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 }
 
-.christmas-menu img {
+.christmas-menu-wrapper img {
   width: 304px;
-  height: 380px;
+  height: 350px;
+  margin: 20px 0;
 }
 
-.christmas-menu-left-images,
-.christmas-menu-right-images {
-  width: min-content;
-  height: 850px;
+.christmas-menu-left-images {
+  height: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.christmas-menu-right-images {
+  height: 90%;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
 }
 
 .christmas-menu-text {
-  width: 30%;
-  height: 750px;
+  width: 40%;
+  height: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  font-size: 1.2em;
+}
+
+.christmas-menu-price-text {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 .christmas-menu-text div h3 {
@@ -130,6 +160,15 @@ body::-webkit-scrollbar {
     )
     1 stretch;
   line-height: 1.5em;
+  font-size: 1em;
+}
+
+.christmas-menu-text-left {
+  text-align: start;
+}
+
+.christmas-menu-text-right {
+  text-align: end;
 }
 
 .last-christmas-text-wrapper {
@@ -143,6 +182,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   text-align: center;
   margin-bottom: 50px;
+  margin-top: -80px;
 }
 
 .christmas-menu-all-in h2 {
@@ -159,4 +199,296 @@ body::-webkit-scrollbar {
     )
     1 stretch;
   line-height: 1.5em;
+}
+
+.a-la-carte {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.a-la-carte-wrapper h1 {
+  display: flex;
+  font-size: 3em;
+  color: #e9484e;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 50px;
+}
+
+.vegeterian-and-meat {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.vegeterian-and-meat h2 {
+  color: #e9484e;
+}
+
+.meat {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.vegeterian {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.seafood-cheese-and-dessert {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.seafood-cheese-and-dessert h2 {
+  color: #e9484e;
+}
+
+.seafood {
+  width: 26%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cheese {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.snacks {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.snacks h1 {
+  color: #e9484e;
+  margin-bottom: 100px;
+}
+
+.snacks-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.snacks-right-image,
+.snacks-left-image {
+  width: 304px;
+  height: 380px;
+}
+
+.snacks-left-image-wrapper {
+  height: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.snacks-left-image-wrapper div {
+  width: 324px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #e9484e 3px solid;
+}
+
+.snacks-right-image-wrapper div {
+  width: 324px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #e9484e 3px solid;
+}
+
+.snacks-right-image-wrapper {
+  height: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.snacks-text-wrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ... (Rest of your global and desktop styles) ... */
+
+/* Responsive styles for phone screens */
+@media only screen and (max-width: 1090px) {
+  html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* Adjust body layout for mobile */
+  body {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .christmas-menu {
+    width: 90%;
+  }
+
+  /* Adjust the layout of each section to stack items */
+  .food,
+  .food-moto,
+  .christmas-menu-wrapper,
+  .christmas-menu-left-images,
+  .christmas-menu-right-images,
+  .christmas-menu-text,
+  .christmas-menu-price-text,
+  .a-la-carte,
+  .vegeterian-and-meat,
+  .seafood-cheese-and-dessert,
+  .snacks,
+  .snacks-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Make images responsive */
+  .christmas-menu-wrapper img,
+  .snacks-right-image,
+  .snacks-left-image,
+  .christmas-menu-left-images div {
+    width: 50%; /* Adjust based on your preference */
+    height: auto; /* Keep aspect ratio */
+    margin: 10px 0; /* Add some space between stacked items */
+  }
+
+  .snacks-left-image-wrapper div,
+  .snacks-right-image-wrapper div {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+  }
+
+  /* Adjust text alignment */
+  .christmas-menu-text-left,
+  .christmas-menu-text-right {
+    text-align: center;
+  }
+
+  /* Modify heading sizes for readability on small screens */
+  h1,
+  h2,
+  h3,
+  .food h1,
+  .snacks h1 {
+    font-size: 1.2em; /* Scale down headings for small screens */
+  }
+
+  .christmas-menu-all-in h2 {
+    width: 90%;
+  }
+
+  /* Adjust food-moto section */
+  .food-moto p {
+    width: 90%; /* Make it full width with some padding */
+  }
+
+  /* Stack the menu items */
+  .vegeterian-and-meat,
+  .seafood-cheese-and-dessert {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust the layout for each menu item */
+  .meat,
+  .vegeterian,
+  .seafood,
+  .cheese {
+    width: 90%; /* Full width with padding */
+    margin-top: 15px;
+  }
+
+  /* Handle any specific adjustments for the christmas menu */
+  .christmas-menu-price,
+  .christmas-menu-text,
+  .christmas-menu-price-text {
+    width: 90%; /* Adjust the width to fit the screen */
+    margin-top: 15px;
+  }
+
+  /* Adjust the last Christmas text wrapper for smaller screens */
+  .last-christmas-text-wrapper {
+    width: 90%;
+  }
+
+  /* Reduce margin and padding on elements that might cause overflow */
+  .a-la-carte-wrapper h1,
+  .snacks-content,
+  .snacks h1 {
+    margin: 20px;
+    padding: 0;
+  }
+
+  /* Finally, ensure that any fixed height is removed or adjusted */
+  .christmas-menu,
+  .snacks {
+    height: auto; /* Make sure the height adjusts to content */
+  }
+
+  .christmas-menu-all-in {
+    margin: 0px;
+  }
+
+  .food h1,
+  .food-moto {
+    border-bottom: none;
+  }
 }
