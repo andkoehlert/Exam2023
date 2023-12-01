@@ -355,9 +355,6 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 
-/* ... (Rest of your global and desktop styles) ... */
-
-/* Responsive styles for phone screens */
 @media only screen and (max-width: 1090px) {
   html {
     display: flex;
@@ -365,7 +362,7 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: column;
   }
-  /* Adjust body layout for mobile */
+
   body {
     width: 60%;
     justify-content: center;
@@ -381,7 +378,6 @@ body::-webkit-scrollbar {
     width: 90%;
   }
 
-  /* Adjust the layout of each section to stack items */
   .food,
   .food-moto,
   .christmas-menu-wrapper,
@@ -399,96 +395,86 @@ body::-webkit-scrollbar {
     justify-content: center;
   }
 
-  /* Make images responsive */
   .christmas-menu-wrapper img,
   .snacks-right-image,
   .snacks-left-image,
   .christmas-menu-left-images div {
-    width: 50%; /* Adjust based on your preference */
-    height: auto; /* Keep aspect ratio */
-    margin: 10px 0; /* Add some space between stacked items */
-  }
+    width: 50%;
+    height: auto;
+    margin: 10px 0;
 
-  .snacks-left-image-wrapper div,
-  .snacks-right-image-wrapper div {
-    width: fit-content;
-    height: fit-content;
-    border: none;
-  }
+    .snacks-left-image-wrapper div,
+    .snacks-right-image-wrapper div {
+      width: fit-content;
+      height: fit-content;
+      border: none;
+    }
 
-  /* Adjust text alignment */
-  .christmas-menu-text-left,
-  .christmas-menu-text-right {
-    text-align: center;
-  }
+    .christmas-menu-text-left,
+    .christmas-menu-text-right {
+      text-align: center;
+    }
 
-  /* Modify heading sizes for readability on small screens */
-  h1,
-  h2,
-  h3,
-  .food h1,
-  .snacks h1 {
-    font-size: 1.2em; /* Scale down headings for small screens */
-  }
+    h1,
+    h2,
+    h3,
+    .food h1,
+    .snacks h1 {
+      font-size: 1.2em;
+    }
 
-  .christmas-menu-all-in h2 {
-    width: 90%;
-  }
+    .christmas-menu-all-in h2 {
+      width: 90%;
+    }
 
-  /* Adjust food-moto section */
-  .food-moto p {
-    width: 90%; /* Make it full width with some padding */
-  }
+    .food-moto p {
+      width: 90%;
+    }
 
-  /* Stack the menu items */
-  .vegeterian-and-meat,
-  .seafood-cheese-and-dessert {
-    flex-direction: column;
-    align-items: center;
-  }
+    .vegeterian-and-meat,
+    .seafood-cheese-and-dessert {
+      flex-direction: column;
+      align-items: center;
+    }
 
-  /* Adjust the layout for each menu item */
-  .meat,
-  .vegeterian,
-  .seafood,
-  .cheese {
-    width: 90%; /* Full width with padding */
-    margin-top: 15px;
-  }
+    .meat,
+    .vegeterian,
+    .seafood,
+    .cheese {
+      width: 90%;
+      margin-top: 15px;
+    }
 
-  /* Handle any specific adjustments for the christmas menu */
-  .christmas-menu-price,
-  .christmas-menu-text,
-  .christmas-menu-price-text {
-    width: 90%; /* Adjust the width to fit the screen */
-    margin-top: 15px;
-  }
+    .christmas-menu-price,
+    .christmas-menu-text,
+    .christmas-menu-price-text {
+      width: 90%;
+      margin-top: 15px;
+    }
 
-  /* Adjust the last Christmas text wrapper for smaller screens */
-  .last-christmas-text-wrapper {
-    width: 90%;
-  }
+    .last-christmas-text-wrapper {
+      width: 90%;
+    }
 
-  /* Reduce margin and padding on elements that might cause overflow */
-  .a-la-carte-wrapper h1,
-  .snacks-content,
-  .snacks h1 {
-    margin: 20px;
-    padding: 0;
-  }
+    .a-la-carte-wrapper h1,
+    .snacks-content,
+    .snacks h1 {
+      margin: 20px;
+      padding: 0;
+    }
 
-  /* Finally, ensure that any fixed height is removed or adjusted */
-  .christmas-menu,
-  .snacks {
-    height: auto; /* Make sure the height adjusts to content */
-  }
+    .christmas-menu,
+    .snacks {
+      height: auto;
+    }
 
-  .christmas-menu-all-in {
-    margin: 0px;
-  }
+    .christmas-menu-all-in {
+      margin: 0px;
+    }
 
-  .food h1,
-  .food-moto {
-    border-bottom: none;
+    .food h1,
+    .food-moto {
+      border-bottom: none;
+    }
   }
 }
