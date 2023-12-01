@@ -402,79 +402,79 @@ body::-webkit-scrollbar {
     width: 50%;
     height: auto;
     margin: 10px 0;
+  }
 
-    .snacks-left-image-wrapper div,
-    .snacks-right-image-wrapper div {
-      width: fit-content;
-      height: fit-content;
-      border: none;
-    }
+  .snacks-left-image-wrapper div,
+  .snacks-right-image-wrapper div {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+  }
 
-    .christmas-menu-text-left,
-    .christmas-menu-text-right {
-      text-align: center;
-    }
+  .christmas-menu-text-left,
+  .christmas-menu-text-right {
+    text-align: center;
+  }
 
-    h1,
-    h2,
-    h3,
-    .food h1,
-    .snacks h1 {
-      font-size: 1.2em;
-    }
+  h1,
+  h2,
+  h3,
+  .food h1,
+  .snacks h1 {
+    font-size: 1.2em;
+  }
 
-    .christmas-menu-all-in h2 {
-      width: 90%;
-    }
+  .christmas-menu-all-in h2 {
+    width: 90%;
+  }
 
-    .food-moto p {
-      width: 90%;
-    }
+  .food-moto p {
+    width: 90%;
+  }
 
-    .vegeterian-and-meat,
-    .seafood-cheese-and-dessert {
-      flex-direction: column;
-      align-items: center;
-    }
+  .vegeterian-and-meat,
+  .seafood-cheese-and-dessert {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .meat,
-    .vegeterian,
-    .seafood,
-    .cheese {
-      width: 90%;
-      margin-top: 15px;
-    }
+  .meat,
+  .vegeterian,
+  .seafood,
+  .cheese {
+    width: 90%;
+    margin-top: 15px;
+  }
 
-    .christmas-menu-price,
-    .christmas-menu-text,
-    .christmas-menu-price-text {
-      width: 90%;
-      margin-top: 15px;
-    }
+  .christmas-menu-price,
+  .christmas-menu-text,
+  .christmas-menu-price-text {
+    width: 90%;
+    margin-top: 15px;
+  }
 
-    .last-christmas-text-wrapper {
-      width: 90%;
-    }
+  .last-christmas-text-wrapper {
+    width: 90%;
+  }
 
-    .a-la-carte-wrapper h1,
-    .snacks-content,
-    .snacks h1 {
-      margin: 20px;
-      padding: 0;
-    }
+  .a-la-carte-wrapper h1,
+  .snacks-content,
+  .snacks h1 {
+    margin: 20px;
+    padding: 0;
+  }
 
-    .christmas-menu,
-    .snacks {
-      height: auto;
-    }
+  .christmas-menu,
+  .snacks {
+    height: auto;
+  }
 
-    .christmas-menu-all-in {
-      margin: 0px;
-    }
+  .christmas-menu-all-in {
+    margin: 0px;
+  }
 
-    .food h1,
-    .food-moto {
-      border-bottom: none;
-    }
+  .food h1,
+  .food-moto {
+    border-bottom: none;
   }
 }
