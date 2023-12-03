@@ -40,17 +40,9 @@ $video = get_field("background_video");
 
     <nav class="navbar  navbar-expand-lg" >
     <div class="container-fluid">
-        <ul class="navbar-nav d-flex flex-row w-100 ">
-            <li class="nav-item">
-                <a class="nav-link text-light h4" href="<?php echo get_permalink(get_page_by_path('home-esbjerg')) ?>">Esbjerg</a>
-                <?php get_header(); ?>
+        <ul class="navbar-nav d-flex  flex-row w-100 ">
+        <?php get_header(); ?>
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light h4" href="https://book.dinnerbooking.com/dk/da-DK/book/index/3073/2">|    Book</a>               
-             <?php get_header(); ?>
-
-            </li>
           
             <li class="nav-item ml-auto">
             <ul class="languages"><?php pll_the_languages() ?></ul>
@@ -64,18 +56,20 @@ $video = get_field("background_video");
     
 
 
+<?php $image = get_field("plates") ?> 
+
 <div class="centered-content justify-content-center flex-column d-flex  text-light " >
-<a class="d-flex justify-content-center pb-2" href="<?php echo home_url(); ?>">
-                    <img class="logo " src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo"
+<a class="d-flex justify-content-center pb-2" href="<?php echo get_permalink(get_page_by_path('home-esbjerg')) ?>" class="nav-link ">
+<img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>" class="img-fluid frontpage_img rounded ">
                     
                     
-                    >
+                    
                 </a>
 <div style="background-color: rgba(233, 72, 78, 0.3);">
-    <p class="d-flex justify-content-center pt-2">Restaurant & Cocktailbar</p
+    <p class="AboutSubText d-flex justify-content-center pt-2">Restaurant & Cocktailbar</p
     
 >
-<h1 class="d-flex justify-content-center ">plates ESBJERG</h1>
+<h1 class="AboutHeadingFront d-flex justify-content-center "> ESBJERG</h1>
 </div>
 
 </div> 
@@ -94,16 +88,16 @@ $video = get_field("background_video");
 style="max-width: 1000px;"
 
 >
-<section class="aboutUS d-flex flex-column flex-md-row justify-content-between align-items-center mx-auto">
+<section class="d-flex flex-column flex-md-row justify-content-between align-items-center mx-auto">
     <div class="p-2 text-left col-md-6 pb-5">
-        <h1 class="text-danger">
+        <h1 class="AboutHeadingFront text-danger">
             <?php the_field("aboutheading")?>
         </h1>
         <hr class="bg-danger">
-        <p class="text-left">
+        <p class="AboutSubText text-left">
             <?php the_field("abouttext")?>
         </p>
-        <p class="text-left">
+        <p class="AboutSubText text-left">
             <?php the_field("aboutsubtext")?>
         </p>
         <p>
@@ -125,11 +119,11 @@ style="max-width: 1000px;"
     <img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>" class="img-fluid rounded about_img">
 </div>
 <div class="p-2 text-right col-xs-12 col-md-6 pb-5">
-    <h1 class="text-danger">
+    <h1 class="AboutHeadingFront text-danger">
     <?php the_field("aboutheading")?>
     </h1>
     <hr class="bg-danger">
-    <p class="text-left">
+    <p class="AboutSubText text-left">
     <?php the_field("abouttext2")?>
 
 
@@ -142,13 +136,13 @@ style="max-width: 1000px;"
 <section class="container aboutUS flex-column flex-md-row d-flex justify-content-between align-items-center mx-auto ">
     <div class="box p-2 text-left col-xs-12 col-md-4 border border-danger p-4 mt-5" style="padding-right: 50px;">
         <p>INTRODUCING:</p>    
-        <h1 class="text-danger">
+        <h1 class="AboutHeadingFront text-danger">
             plates Head chef,
             <br>
             David Johansen 
         </h1>
         <hr class="bg-danger">
-        <p class="text-left">
+        <p class="AboutSubText text-left">
             <?php the_field("abouttext2")?>
         </p>
     </div>
@@ -159,27 +153,28 @@ style="max-width: 1000px;"
 </section>
 
 <div class="text-right">
-<h1 class="text-danger ">
+<h1 class="AboutHeadingFront text-danger ">
     <?php the_field("skybar")?>
     </h1>
     <hr class="bg-danger">
 </div>
-<section class="container aboutUS d-flex flex-column flex-md-row justify-content-between  mx-auto ">
 
-  <div class=" col-xs-12 col-md-6  pt-5">
+
+<section class="container aboutUS d-flex flex-column flex-md-row justify-content-between align-items-center mx-auto ">
+
+  <div class="p-2 col-xs-12 col-md-6  pt-5">
     <?php $image = get_field("about_skybar") ?> 
     <img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>" class="img-fluid rounded about_img">
 </div>
-<div class=" text-right col-xs-12 col-md-6 pt-5">
-    
-    <h3 class="text-left text-danger">
-    <?php the_field("skybar_headline")?>
-    </h3>
-    <p class="text-left">
-    <?php the_field("skybar_subtext")?>
-    </p>
-    <p class="text-left">
-    <?php the_field("skybar_subtext2")?>
+<div class="p-2 text-right col-xs-12 col-md-6 pb-5">
+    <h1 class="AboutHeadingFront text-danger">
+    <?php the_field("aboutheading")?>
+    </h1>
+    <hr class="bg-danger">
+    <p class="AboutSubText text-left">
+    <?php the_field("abouttext2")?>
+
+
     </p>
   </div>
 </section>
@@ -196,7 +191,13 @@ style="max-width: 1000px;"
 </html>
 <style>
        
-
+       @font-face {
+  
+  font-family: 'plates';
+  src: url('assets/fonts/Trade\ Gothic\ LT\ Std\ Extended.otf') format('woff2'),
+  /* You can specify different font file formats and their paths */
+  /* Other font properties (e.g., font-weight, font-style) can be added here */
+}
         .frontpage {
             position: relative;
             height: 100vh;
@@ -245,13 +246,20 @@ style="max-width: 1000px;"
     }
   }
 
-
+.AboutHeadingFront{
+    font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
 .Hometitle{
 color: rgba(233, 72, 78, 1);;
 
 }
 
+.AboutSubText{
+    font-family: 'plates';
 
+}
 
 .aboutUS{
     background-color: #FFFDEE;

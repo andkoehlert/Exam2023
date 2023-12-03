@@ -19,7 +19,7 @@ Template Name: Wine page
 <section>
 
 
-   <div class="d-flex">
+   <div class="d-flex pt-3">
    <h2 class="page-title d-flex">
                Wine
 
@@ -75,7 +75,7 @@ Template Name: Wine page
 
 
                        echo '<li>' . $field_1 . '</li>';
-                       echo '<li>' . $field_2 . '</li>';
+                       echo '<li class="text-danger">' . $field_2 . '</li>';
                    }
 
 
@@ -108,7 +108,7 @@ if ($plates_query->have_posts()) {
         $field_2 = get_post_meta(get_the_ID(), 'price_wine', true);
 
         echo '<li>' . $field_1 . '</li>';
-        echo '<li>' . $field_2 . '</li>';
+        echo '<li class="text-danger">' . $field_2 . '</li>';
     }
 
     echo '</ul>';
@@ -144,7 +144,7 @@ if ($plates_query->have_posts()) {
 
 
                        echo '<li>' . $field_1 . '</li>';
-                       echo '<li>' . $field_2 . '</li>';
+                       echo '<li class="text-danger">' . $field_2 . '</li>';
                    }
 
 
@@ -181,7 +181,7 @@ if ($plates_query->have_posts()) {
 
 
                        echo '<li>' . $field_1 . '</li>';
-                       echo '<li>' . $field_2 . '</li>';
+                       echo '<li class="text-danger">' . $field_2 . '</li>';
                    }
 
 

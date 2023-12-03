@@ -20,7 +20,7 @@ Template Name: New Years
 <main id="NewYears"> 
 <section>
 
-   <div class="d-flex">
+   <div class="d-flex pt-3">
        <h1 class="page-title d-flex">
                New Year's
 
@@ -59,17 +59,29 @@ Template Name: New Years
 
 
    <div class="block mx-auto">
+    <h1 class="newyears-price">NEW YEARS MENU</h1>
        <p class="newyears-price">
        1000DKK
        </p>
    </div>
 
-   <div class="d-flex">
+   <div class="d-block d-lg-flex">
            <div class="col">
-              
+               <?php
+                   if (function_exists('get_field')) {
+                       for ($i = 0; $i < 1; $i++) {
+                           $image = get_field('leftphoto');
+
+
+                           if ($image) {
+                               echo '<img class="left-photo" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                           }
+                       }
+                   }
+               ?>
        </div>
        <div class="col">
-           <div class="serving-left-test">
+           <div class="serving-left">
                    <h4 class="serving-title">
                        1st serving
                    </h4>
@@ -78,7 +90,7 @@ Template Name: New Years
 
                    </p>
                </div>
-               <div class="serving-right-test">
+               <div class="serving-right">
                    <h4 class="serving-title right-float">
                        2nd serving
                    </h4>
@@ -87,7 +99,7 @@ Template Name: New Years
   
                    </p>
                </div>
-               <div class="serving-left-test">
+               <div class="serving-left">
                <h4 class="serving-title">
                    3rd serving
                </h4>
@@ -96,7 +108,7 @@ Template Name: New Years
 
                </p>
            </div>
-           <div class="serving-right-test">
+           <div class="serving-right">
                <h4 class="serving-title right-float">
                    4th serving
                </h4>
@@ -104,23 +116,23 @@ Template Name: New Years
                <?php the_field("4st_serving")?>
                </p>
            </div>
-           <?php
-   if (function_exists('get_field')) {
-
-
-       $image = get_field('logo');
-
-
-       if ($image) {
-           echo '<img class="crab-logo" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-       }
-   }
-   ?>
        </div>
        <div class="col">
-      
+           <?php
+               if (function_exists('get_field')) {
+                   for ($i = 0; $i < 1; $i++) {
+                       $image = get_field('rightphoto');
+
+
+                       if ($image) {
+                           echo '<img class="right-photo" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                        }
+                   }
+               }
+           ?>
        </div>
    </div>
+
 
 
 

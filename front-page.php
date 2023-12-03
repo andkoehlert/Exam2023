@@ -37,38 +37,41 @@ $image2 = get_field("backgroundMobile");
     <div class="content-overlay">
 
 
-    <nav class="navbar navbar-expand-lg" style="background-color: rgba(233, 72, 78, 0.3);">
+    <nav class="navbar navbar-expand-lg" style="">
     <div class="container">
         <ul class="navbar-nav d-flex flex-col md-flex-row justify-content-around w-100">
             <li class="nav-item">
-                <a class="nav-link text-light h4" href="<?php echo get_permalink( get_page_by_path( 'home-esbjerg' ) ) ?>">Esbjerg</a>
+                <a class="AboutHeadingFront nav-link text-light h4" href="<?php echo get_permalink( get_page_by_path( 'home-esbjerg' ) ) ?>">Esbjerg</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light h4" href="#">Christianshavn</a>
+                <a class="AboutHeadingFront nav-link text-light h4" href="#">Christianshavn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light h4" href="#">Solrød</a>
+                <a class="AboutHeadingFront nav-link text-light h4" href="#">Solrød</a>
             </li>
         </ul>
-    </div>
 
+    </div>
     <ul class="languages"><?php pll_the_languages() ?></ul>
+
 </nav>
 
 
+<?php $image = get_field("plates") ?> 
 
 <div class="centered-content justify-content-center flex-column d-flex  text-light " >
-<a class="d-flex justify-content-center pb-2" href="<?php echo home_url(); ?>">
-                    <img class="logo " src="<?php echo get_template_directory_uri() . '/assets/logo/Plates-Logo.png'; ?>" alt="Logo"
+<a class="d-flex justify-content-center pb-2" href="<?php echo get_permalink(get_page_by_path('home-esbjerg')) ?>" class="nav-link ">
+<img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>" class="img-fluid frontpage_img rounded ">
                     
                     
-                    >
+                    
                 </a>
+               
 <div style="background-color: rgba(233, 72, 78, 0.3);">
-    <h6 class="d-flex justify-content-center pt-2">Restaurant & Cocktailbar</h6
+    <h6 class=" d-flex justify-content-center pt-2">Restaurant & Cocktailbar</h6
     
 >
-<h3 class="d-flex justify-content-center ">Welcome!</h3>
+<h3 class="AboutHeadingFront heading_frontpage_intro d-flex justify-content-center ">Choose one of our three restaurants</h3>
 </div>
 
 </div> 
@@ -85,12 +88,12 @@ $image2 = get_field("backgroundMobile");
             <div 
             class="container d-flex justify-content-center flex-column" style="max-width: 700px;">
                 <div>
-                    <h3 class="Hometitle" ><?php the_field("homeTitle")?></h3
+                    <h3 class="Hometitle AboutHeadingFront" ><?php the_field("homeTitle")?></h3
                     
                     
                     >
-                    <article >
-            <?php
+                    <article class="AboutSubFront" >
+            <?php 
             if (have_posts()) {
                 while (have_posts()) {
                     the_post();
@@ -107,7 +110,7 @@ $image2 = get_field("backgroundMobile");
     </section>
         <section class="aboutUS d-flex justify-content-center mx-auto ">
         <div class="p-2 bg-image hover-zoom">
-    <h4 class=" d-flex justify-content-center pb-4 text-danger">Plates Esbjerg</h4>
+    <h4 class="AboutHeadingFront d-flex justify-content-center pb-4 text-danger">Plates Esbjerg</h4>
     <?php $image = get_field("platesesbjerg") ?> 
     <a href="<?php echo get_permalink(get_page_by_path('home-esbjerg')) ?>" class="nav-link text-light h4">
         <img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>" class="img-fluid frontpage_img rounded ">
@@ -117,7 +120,7 @@ $image2 = get_field("backgroundMobile");
 
   </div>
   <div class="p-2 bg-image hover-zoom">
-    <h4 class=" d-flex justify-content-center pb-4 text-danger">Plates Christianshavn</h4>
+    <h4 class="AboutHeadingFront d-flex justify-content-center pb-4 text-danger">Plates Christianshavn</h4>
     <?php $image = get_field("plateschristianshavn") ?> 
     <a href="<?php echo get_permalink(get_page_by_path('home-esbjerg')) ?>" class="nav-link ">
         <img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>" class="img-fluid frontpage_img rounded ">
@@ -178,7 +181,16 @@ $image2 = get_field("backgroundMobile");
             z-index: 1;
             
         }
-  
+        .AboutHeadingFront{
+    font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+.AboutSubFront{
+    font-family: 'plates';
+
+}
 
 .hover-zoom img {
     transition: transform 0.3s ease; /* Add a smooth transition for the normal state */
@@ -230,29 +242,7 @@ color: rgba(233, 72, 78, 1);;
       font-size: small;
       }
 }
-footer {
-  background-color: #FFFDEE;
-  }
-.reservation {
-  color: #E9484E;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  border-bottom: 3px solid #E9484E;
-}
-.footer-title {
-  color: #E9484E;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 18px;
-}
-.info-box{
-  width: 200px;
-  height: auto;
-}
-.footer-text {
-  font-size: 14px;
-}
+
 
     </style>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -2,6 +2,10 @@
 function enqueue_custom_styles() {
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/style.css'); 
 }
+function enqueue_jquery() {
+    wp_enqueue_script('jquery', false, array(), false, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 
@@ -12,6 +16,8 @@ function theme_support(){
     add_theme_support('page-templates');
 
 }
+
+
 
 add_action('after_setup_theme', 'theme_support');
 

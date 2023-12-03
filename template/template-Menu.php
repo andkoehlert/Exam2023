@@ -48,7 +48,7 @@ Template Name: Menu Page
    }
    ?>
        <ul class="list-group">
-       <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'food' ) ) ?>">
+       <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'food-menu-christmas-dinner' ) ) ?>">
                <li class="menu-item-box m-3 text-center block mx-auto">
                <?php the_field("food")?>
                </li>
@@ -72,6 +72,12 @@ Template Name: Menu Page
                <?php the_field("new_years")?>
                </li>
             </a>
+            <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'book' ) ) ?>">
+               <li class="menu-item-box m-3 text-center block mx-auto">
+               <?php the_field("book")?>
+
+               </li>
+            </a>
             <a  class="menu-link block mx-auto" href="<?php echo get_permalink( get_page_by_path( 'home-esbjerg' ) ) ?>">
                <li class="menu-item-box m-3 text-center block mx-auto">
                <?php the_field("home")?>
@@ -81,7 +87,7 @@ Template Name: Menu Page
        </ul>
 
 
- 
+   
 
 
   

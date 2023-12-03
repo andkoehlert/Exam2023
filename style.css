@@ -6,12 +6,56 @@ Description: Exam
 Version: 1.0
 
 */
-/* Add these styles to set a fixed height for the navbar and center the logo vertically */
 
-
-.navbar-nav li {
-  margin-bottom: 10px; 
+@font-face {
+  
+  font-family: 'plates';
+  src: url('assets/fonts/Trade\ Gothic\ LT\ Std\ Extended.otf') format('woff2'),
+  /* You can specify different font file formats and their paths */
+  /* Other font properties (e.g., font-weight, font-style) can be added here */
 }
+@import url("https://use.typekit.net/gsu7ifh.css");
+/* Navbar */
+
+h2{
+  font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+.menu-items {
+  text-decoration: none;
+ }
+ .menu-items a {
+  color: #e32228;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid #ececec;
+  border-radius: 10px;
+  padding: 5px 15px;
+ }
+ .menu-items a:hover {
+  text-decoration: none;
+  color: #ececec;
+ }
+ @media screen and (max-width:772px) {
+  .menu-items {
+  float: left;
+    margin-top: 10px;
+    gap: 10px;
+    text-align: center;
+  }
+  .menu-items a {
+    color: #ececec;
+    border-bottom: 2px solid #ececec;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+  .menu-items a:hover {
+    text-decoration: none;
+    color: #e32228 ;
+  }
+ }
+ 
 
 
 
@@ -39,7 +83,12 @@ header, article {
     z-index: 1; 
 }
 
+@media screen and (max-width:600px) {
 
+  .heading_frontpage_intro{
+    font-size: 20px;
+  }
+}
   
 
 @media (min-width: 768px) {
@@ -49,9 +98,7 @@ header, article {
       max-width: 100%;
     }
 
-   .aboutUS{
-    
-   }
+   
   }
   
   .carousel-multi-item-2 .card img {
@@ -63,6 +110,7 @@ header, article {
 ul.languages {
     list-style: none;
     display: flex;
+
 }
 
 ul.languages li {
@@ -104,8 +152,10 @@ ul.languages .current-lang a {
   list-style: none;
   padding: 10px;
   width: 300px;
-
-  border: 1px solid #E9484E;
+  font-family: "trade-gothic-next", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  border: 2px solid #E9484E;
   font-size: 30px;
 }
 
@@ -148,21 +198,26 @@ ul.languages .current-lang a {
 
 footer {
   background-color: #FFFDEE;
+  
 }
 
 .reservation {
   color: #E9484E;
   padding: 10px;
-  font-weight: 600;
   font-size: 20px;
   border-bottom: 3px solid #E9484E;
+  font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
 }
 
 .footer-title {
   color: #E9484E;
   padding: 10px;
-  font-weight: 600;
   font-size: 18px;
+  font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
 }
 .info-box{
   width: 200px;
@@ -170,7 +225,9 @@ footer {
 }
 .footer-text {
   font-size: 14px;
+  font-family: 'plates';
 }
+
 
 
 @media screen and (max-width:1000px) {
@@ -201,14 +258,21 @@ footer {
       color: #E9484E;
       padding: 10px;
       font-weight: 600;
-      font-size: 12px;
+      font-size:12px;
+      
     }
+
+
+
   .info-box{
       width: 150px;
       height: auto;
   }
   .footer-text {
       font-size: 11px;
+  }
+  .heading_frontpage_intro{
+    font-size: 20px;
   }
 }
 
@@ -221,8 +285,10 @@ footer {
   width: 60%;
   margin-left: 20px;
   color: #E9484E;
-  font-weight: 600;
   font-size: 30px;
+  font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
 }
 .language {
   margin-left: auto;
@@ -234,6 +300,8 @@ footer {
   width: 400px;
   text-align: center;
   color: #707070;
+  font-family: 'plates';
+
 }
 .underline {
   width: 60%;
@@ -252,11 +320,16 @@ footer {
   padding: 0px;
   font-size: 13px;
   color: #707070;
+  font-family: 'plates';
+
 }
 .menu-category {
   color: #E9484E;
   font-weight: 400;
   font-size: 16px;
+  font-family: "trade-gothic-next", sans-serif;
+font-weight: 800;
+font-style: normal;
 }
 
 
@@ -266,12 +339,7 @@ footer {
       margin-left: 15px;
       font-size: 30px;
   }
-  .language {
-      margin-left: auto;
-      margin-right: 15px;
-      color: #E9484E;
-      font-size: 18px;
-  }
+  
   .page-description {
      font-size: 15px;
      width: 280px;
@@ -293,17 +361,12 @@ footer {
   .page-title {
       width: 65%;
       margin-left: 10px;
-      font-size: 25px;
-  }
-  .language {
-      margin-left: auto;
-      margin-right: 10px;
-      color: #E9484E;
       font-size: 15px;
   }
+ 
   .page-description {
      font-size: 13px;
-     width: 200px;
+     width: 300px;
   }
   .underline {
       width: 65%;
@@ -315,6 +378,15 @@ footer {
       font-size: 11px;
       color: #707070;
   }
+  .languages {
+    margin-left: 10px;
+    margin-right: auto;
+    display: block;
+    color: #E9484E;
+    font-size: 8px;
+    padding-left: 0;
+}
+  
 }
 
 
@@ -327,36 +399,40 @@ footer {
   padding: 10px;
   font-size: 30px;
 }
+.left-photo {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: -100px;
+ width: 80%;
+ height: auto;
+}
+.right-photo {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 80%;
+ height: auto;
+ margin-top: 100px;
+}
+
+
 .serving-left {
-  width: 40%;
-  margin-left: 10%;
-  margin-right: auto;
-  margin-top: 10px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ font-family: 'plates';
+ 
 }
 .serving-right {
-  width: 40%;
-  margin-right: 10%;
-  margin-left: auto;
-  margin-top: 10px;
-}
-
-
-/*testing stuff
-
-
-.serving-left-test {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
- 
- 
+  font-family: 'plates';
+
 }
-.serving-right-test {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-*/
+
+
 
 
 .serving-title {
@@ -379,20 +455,41 @@ footer {
  margin-left: auto;
  margin-right: auto;
 }
-@media screen and (max-width:1000px) {
-  .serving-left {
-      width: 50%;
-      margin-left: 5%;
-      margin-right: auto;
-  }
-  .serving-right {
-      width: 50%;
-      margin-right: 5%;
-      margin-left: auto;
-  }
+@media screen and (max-width:992px) {
   .serving-description {
       font-size: 13px;
   }
+  .serving-left {
+      width: 60%;
+      margin-left: 5%;
+      margin-right: auto;
+      margin-top: 30px;
+    
+  }
+  .serving-right {
+      width: 60%;
+      margin-right: 5%;
+      margin-left: auto;
+      margin-top: 30px;
+     
+  }
+  .left-photo {
+      display: block;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 50px;
+     width: 300px;
+     height: auto;
+  }
+  .right-photo {
+      display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 300px;
+     height: auto;
+     margin-top: 50px;
+  }
+ 
 }
 
 
@@ -418,6 +515,7 @@ footer {
 }
 
 
+
 .menu-navigation {
   list-style: none;
   text-decoration: none;
@@ -427,6 +525,13 @@ footer {
   margin-left: auto;
   margin-top: 10px;
   padding: 0;
+  font-family: 'plates';
+
+}
+
+.navbar-nav{
+  font-family: 'plates';
+
 }
 .navigation-link {
   color: #E9484E;
@@ -459,6 +564,9 @@ footer {
       margin-right: 15%;
       margin-left: auto;
       margin-top: 5px;
+      
    
   }
 }
+
+

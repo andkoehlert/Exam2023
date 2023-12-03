@@ -24,7 +24,7 @@ Template Name: Drinks Page
 
 
  
-<div class="d-flex">
+<div class="d-flex pt-3">
    <h1 class="page-title d-flex">
                Drinks
 
@@ -82,7 +82,7 @@ Template Name: Drinks Page
 
                        echo '<li>' . $field_1 . '</li>';
                        echo '<li>' . $field_2 . '</li>';
-                       echo '<li>' . $field_3 . '</li>';
+                       echo '<li class="text-danger">' . $field_3 . '</li>';
                    }
 
 
@@ -117,7 +117,7 @@ Template Name: Drinks Page
 
                        echo '<li>' . $field_1 . '</li>';
                        echo '<li>' . $field_2 . '</li>';
-                       echo '<li>' . $field_3 . '</li>';
+                       echo '<li class="text-danger">' . $field_3 . '</li>';
                    }
 
 
@@ -155,7 +155,7 @@ Template Name: Drinks Page
 
                        echo '<li>' . $field_1 . '</li>';
                        echo '<li>' . $field_2 . '</li>';
-                       echo '<li>' . $field_3 . '</li>';
+                       echo '<li class="text-danger">' . $field_3 . '</li>';
                    }
 
 
@@ -191,7 +191,7 @@ Template Name: Drinks Page
 
                        echo '<li>' . $field_1 . '</li>';
                        echo '<li>' . $field_2 . '</li>';
-                       echo '<li>' . $field_3 . '</li>';
+                       echo '<li class="text-danger">' . $field_3 . '</li>';
                    }
 
 
