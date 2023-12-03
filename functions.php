@@ -1,4 +1,14 @@
 <?php
+function enqueue_custom_styles() {
+    wp_enqueue_style('custom-style', get_template_directory_uri() . '/style.css'); 
+}
+function enqueue_jquery() {
+    wp_enqueue_script('jquery', false, array(), false, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
 function theme_support(){
     add_theme_support('title_tag');
     add_theme_support('custom-logo');
@@ -7,8 +17,15 @@ function theme_support(){
 
 }
 
+
+
 add_action('after_setup_theme', 'theme_support');
 
+function plp_register_strings() {
+    pll_register_string('homeTitle', 'This is the frontpage');
+   
+
+}
 
 function menus () {
  $locations = array(
@@ -36,4 +53,4 @@ function register_styles_and_scripts() {
 add_action('wp_enqueue_scripts', 'register_styles_and_scripts');
 
 
-?>
+
